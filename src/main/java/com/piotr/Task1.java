@@ -1,12 +1,12 @@
 package com.piotr;
 
-import java.io.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.*;
-import java.util.stream.*;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-class Result {
+class Task1 {
 
     public static void plusMinus(List<Integer> arr) {
         double total = arr.size();
@@ -22,11 +22,9 @@ class Result {
         return BigDecimal.valueOf(number)
                 .setScale(6, RoundingMode.HALF_UP);
     }
-}
 
-public class Task1 {
     public static void main(String[] args) {
-        Result.plusMinus(List.of(-4, 3, -9, 0, 4, 1));
-        Result.plusMinus(List.of(1, -2, -7, 9, 1, -8, -5));
+        plusMinus(List.of(-4, 3, -9, 0, 4, 1));
+        plusMinus(List.of(1, -2, -7, 9, 1, -8, -5));
     }
 }
