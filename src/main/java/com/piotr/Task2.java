@@ -6,22 +6,23 @@ import java.util.List;
 public class Task2 {
 
     public static void miniMaxSum(List<Integer> arr) {
-        List<Integer> sortedArr = arr
+        var sortedArr = arr
                 .stream()
                 .sorted()
+                .map(Long::valueOf)
                 .toList();
 
         var min = sortedArr
                 .subList(0, 4)
                 .stream()
-                .mapToLong(it -> it)
-                .sum();
+                .reduce(Long::sum)
+                .get();
 
         var max = sortedArr
                 .subList(1, 5)
                 .stream()
-                .mapToLong(it -> it)
-                .sum();
+                .reduce(Long::sum)
+                .get();
 
         System.out.printf("%d %d", min, max);
     }
