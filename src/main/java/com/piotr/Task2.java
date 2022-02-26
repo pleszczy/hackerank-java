@@ -15,14 +15,12 @@ public class Task2 {
         var min = sortedArr
                 .subList(0, 4)
                 .stream()
-                .reduce(Long::sum)
-                .get();
+                .reduce(0L, Long::sum);
 
         var max = sortedArr
                 .subList(1, 5)
                 .stream()
-                .reduce(Long::sum)
-                .get();
+                .reduce(0L, Long::sum);
 
         System.out.printf("%d %d", min, max);
     }
